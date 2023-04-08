@@ -1,0 +1,36 @@
+rick morty
+1 1 1 1
+1 0 0 2 1
+1 0 5 0 1
+1 3 4 0 1
+1 1 1 1
+morty j
+morty g
+rick i
+morty j
+rick h
+morty h
+rick j
+rick l
+morty h
+rick l
+morty k
+rick j
+morty h
+rick h
+mroty j
+rick k
+rick h
+morty j
+rick j
+
+
+
+a b
+1 1 1 1 1
+1 2 5 3 1
+1 1 1 1 1
+a q
+b h
+a l
+b l
