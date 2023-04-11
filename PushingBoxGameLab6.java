@@ -58,6 +58,10 @@ class Map{
         int[][] data = new int[countRow][]; //临时存放地图的容器,将数据再转移到mapUnit类的map中
         
         mapUnit[][] map = new mapUnit[countRow][];
+
+        this.playerA= new Player(playerNameA);
+        this.playerB= new Player(playerNameB);
+
         for (int i = 0 ; i < countRow ; i ++){
             String[] dataInString = list.get(i).split(" ");
             int[] row = Arrays.stream(dataInString).mapToInt(Integer::parseInt).toArray();
@@ -70,7 +74,7 @@ class Map{
             for (int j = 0 ; j < data[i].length; j++){
                 map[i][j] = new mapUnit(data[i][j]);
                 if (map[i][j].mapUnitType == 2){
-                    setPlayerProperties(playerNameA, playerNameB, map, i, j);
+                    setPlayerProperties( map, i, j);
                 } 
                 if (map[i][j].mapUnitType == 5){
                     setBoxProperties(map, i, j);
@@ -112,16 +116,15 @@ class Map{
     }
 
     /**设置玩家属性，位置 */
-    private void setPlayerProperties(String playerNameA, String playerNameB, mapUnit[][] map, int i, int j) {
-        Player playerA= new Player(playerNameA);
-        Player playerB= new Player(playerNameB);
+    private void setPlayerProperties( mapUnit[][] map, int i, int j) {
+       
         //将Player对象与Map类中的player变量关联起来，避免出现空指针异常
-        this.playerA = playerA;
-        playerA.setPositionX(i);
-        playerA.setPositionY(j);
-        this.playerB = playerB;
-        playerB.setPositionX(i);
-        playerB.setPositionY(j);  
+        
+        this.playerA.setPositionX(i);
+        this. playerA.setPositionY(j);
+        
+        this.playerB.setPositionX(i);
+        this.playerB.setPositionY(j);  
         map[i][j].mapUnitType = 0;
         //角色其实并不构成地图的基本单元，通过Player类里的positionX，positionY来记录其坐标，而原本的位置即为空地
     }
